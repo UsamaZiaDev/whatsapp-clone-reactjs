@@ -1,21 +1,19 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+import { Routes, Route } from "react-router-dom"
+import Dashboard from "./components/dashboard.jsx/Dashboard"
 
 function App() {
-  const [count, setCount] = useState(0)
 
   return (
     <>
-      <div class="card" style="width: 18rem;">
-  <img class="card-img-top" src="..." alt="Card image cap"/>
-  <div class="card-body">
-    <h5 class="card-title">Card title</h5>
-    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-    <a href="#" class="btn btn-primary">Go somewhere</a>
-  </div>
-</div>
+
+
+
+      <Routes >
+
+        <Route path="/" element={ <Dashboard/> }/>
+
+
+      </Routes>
     </>
   )
 }
