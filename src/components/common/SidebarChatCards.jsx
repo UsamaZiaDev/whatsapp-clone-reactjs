@@ -1,6 +1,5 @@
 import Profile from "./../../assets/images/profile.jpg"
-
-const UserInfoCard = () => {
+const SidebarChatCards = () => {
   return (
     <div className="bg-info user-info-card p-3 d-flex align-items-center rounded">
        <img src={Profile} className="rounded-circle img-60 border-success border-3 border"/>
@@ -12,4 +11,4 @@ const UserInfoCard = () => {
   )
 }
 
-export default UserInfoCard
+export default SidebarChatCards

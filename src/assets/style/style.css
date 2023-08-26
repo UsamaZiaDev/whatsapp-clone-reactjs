@@ -4,7 +4,8 @@
     --success: #22B573;
     --light-gray:#CCCCCC;
     --pure:#ffff;
-
+    --dim:#ffffff12;
+    --blue:#16B4F2;
 }
 
 *{
@@ -57,8 +58,34 @@ body{
 .img-60{
     width: 60px;
     height: 60px;
+    border-radius: 100%;
 }
 .img-75{
     width: 75px;
     height: 75px;
+    border-radius: 100%;
+}
+.border-dim{
+    border-color: var(--dim) !important
+}
+.border-success{
+    border-color: var(--success) !important;
+}
+.text-dim{
+    color: #ffffff3e !important;
+}
+.sidebar-chat-boxs > div:last-child{
+    border-bottom: none !important;
+} 
+.total-chat-counter{
+    width:27px;
+    height: 27px;
+    background:var(--success);
+    border-radius: 100%;
+    font-size: 13px;
+    font-weight: bold;
+    color:var(--primary);
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
