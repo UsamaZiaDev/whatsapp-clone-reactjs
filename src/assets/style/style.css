@@ -55,16 +55,20 @@ body{
 .text-pure{
     color: var(--pure) !important;
 }
+.f-s{
+    font-size: 13px ;
+}
+.img-25{
+    width: 40px;
+    height: 40px;
+    border-radius: 100%;
+}
 .img-60{
     width: 60px;
     height: 60px;
     border-radius: 100%;
 }
-.img-75{
-    width: 75px;
-    height: 75px;
-    border-radius: 100%;
-}
+
 .border-dim{
     border-color: var(--dim) !important
 }
@@ -88,4 +92,38 @@ body{
     display: flex;
     align-items: center;
     justify-content: center;
+}
+
+.chat-list > div:nth-child(even){
+    align-self: flex-end;
+}
+.chat-list > div:nth-child(even) .text-card{
+    background-color: var(--success) !important;
+    border-radius:10px 0 10px 10px;
+}
+.chat-list > div:nth-child(odd){
+    align-self: flex-start;
+}
+.chat-list > div:nth-child(odd) .text-card{
+    background-color: var(--light-gray) !important;
+    color: var(--light-dark);
+    border-radius:0 10px 10px 10px;
+}
+input:focus{
+    box-shadow: 0 0 5px #22b573be !important;
+}
+.icon-field .dim-input{
+    background-color: var(--dim);
+    border: 1px solid #4b4b4b !important;
+    color:var(--light-gray) !important
+}
+.icon-field .dim-input:placeholder{
+    color:var(--light-gray) !important
+}
+.icon-field *{
+    color:var(--light-gray) !important
+}
+
+::placeholder{
+    color :var(--light-gray) !important
 }

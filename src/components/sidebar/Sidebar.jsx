@@ -58,7 +58,9 @@ const Sidebar = () => {
       </div>
 
       <div className="sidebar-chat-search px-3 pb-4 bg-dark g-info border-bottom border-dim">
-        <IconField/>
+        <IconField
+          placeholder="search ..."
+        />
       </div>
 
       <div className=" sidebar-chat-boxs p-3 ">
