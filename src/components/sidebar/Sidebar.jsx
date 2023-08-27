@@ -8,7 +8,6 @@ import Profile3 from "./../../assets/images/profile-3.jpg"
 import Profile4 from "./../../assets/images/profile-4.jpg"
 
 import IconField from '../common/IconField'
-import SidebarChatCards from "../common/SidebarChatCards"
 
 const Sidebar = () => {
 
@@ -50,7 +49,7 @@ const Sidebar = () => {
   return (
     <div className="bg-primary vh-100">
       
-      <div className="bg-dark user-info-card p-3 d-flex align-items-center rounded">
+      <div className="bg-dark user-info-card p-3 d-flex align-items-center ">
         <img src={Profile} className="rounded-circle img-60 border-success border-3 border"/>
         <div className="text-light con ms-3 g-danger w-100 d-flex justify-content-between">
               <h4> Messages </h4>
@@ -58,7 +57,7 @@ const Sidebar = () => {
         </div>
       </div>
 
-      <div className="sidebar-chat-search px-3 pb-4 bg-dark g-info">
+      <div className="sidebar-chat-search px-3 pb-4 bg-dark g-info border-bottom border-dim">
         <IconField/>
       </div>
 
@@ -71,7 +70,7 @@ const Sidebar = () => {
                   <img src={img} className=" img-60 border-success border-3 border"/>
                   <div className="con ms-3 box align-items-center w-100 d-flex justify-content-between">
                         <div className="">
-                          <h6> {name} </h6>
+                          <h6 className="text-capitalize"> {name} </h6>
                           <p className="text-dim small"> {lastmessage} </p>
                         </div>
                         
