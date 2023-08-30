@@ -127,3 +127,21 @@ input:focus{
 ::placeholder{
     color :var(--light-gray) !important
 }
+
+
+
+
+
+.app-modal-wrapper{
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    z-index: 1000;
+    background: rgba(0, 0, 0, 0.741);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.app-modal-wrapper .app-modal{
+    
+}

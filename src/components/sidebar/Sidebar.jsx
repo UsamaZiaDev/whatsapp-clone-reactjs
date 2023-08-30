@@ -1,6 +1,5 @@
 
 import {BiPowerOff} from "react-icons/bi"
-import {BsThreeDotsVertical} from "react-icons/bs"
 
 import Profile from "./../../assets/images/profile.jpg"
 import Profile2 from "./../../assets/images/profile-2.jpg"
@@ -8,6 +7,8 @@ import Profile3 from "./../../assets/images/profile-3.jpg"
 import Profile4 from "./../../assets/images/profile-4.jpg"
 
 import IconField from '../common/IconField'
+import SidebarChat from "./SidebarChat"
+import AppModal from "../common/AppModal"
 
 const Sidebar = () => {
 
@@ -44,10 +45,23 @@ const Sidebar = () => {
         totalmessage: "6",
         img: Profile4
       },
+      {
+        id:4,
+        name:"dummy",
+        lastsceen: "5:14 AM",
+        lastmessage: "cards designed...",
+        totalmessage: "1"
+      },
     ]
 
   return (
     <div className="bg-primary vh-100">
+
+    <AppModal
+      title="Room"
+      text="Create New Room"
+      close={true}
+    />
       
       <div className="bg-dark user-info-card p-3 d-flex align-items-center ">
         <img src={Profile} className="rounded-circle img-60 border-success border-3 border"/>
@@ -63,30 +77,45 @@ const Sidebar = () => {
         />
       </div>
 
+
+      {/* <AppModal/> */}
+
       <div className=" sidebar-chat-boxs p-3 ">
         {
-          SidebarDummyContent?.map((users)=>{
-            const {id, name, lastmessage, lastsceen, totalmessage, img} = users
-              return(
-                <div className="mb-2 d-flex px-3 border-bottom border-dim py-2 align-items-center" key={id}>
-                  <img src={img} className=" img-60 border-success border-3 border"/>
-                  <div className="con ms-3 box align-items-center w-100 d-flex justify-content-between">
-                        <div className="">
-                          <h6 className="text-capitalize"> {name} </h6>
-                          <p className="text-dim small"> {lastmessage} </p>
-                        </div>
-                        
-                        <div className="align-items-center  d-flex justify-content-between">
-                          <p className="text-dim small"> {lastsceen}  </p>
-                          <h6 className="total-chat-counter ms-2"> {totalmessage} </h6>
-                          <BsThreeDotsVertical className="fs-4 text-dim" />
-                        </div>
-                  </div>
-                </div>
-              )
-          })
+          SidebarDummyContent?.map((users)=> <SidebarChat users={users} /> )
         }
       </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
     </div>
