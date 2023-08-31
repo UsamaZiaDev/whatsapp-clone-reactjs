@@ -6,10 +6,10 @@ function App() {
   return (
     <>
 
-      <Routes >
+      {/* <Routes >
         <Route path="/" element={ <Dashboard/> }/>
-      </Routes>
-
+      </Routes> */}
+      <Dashboard/>
       
     </>
   )
