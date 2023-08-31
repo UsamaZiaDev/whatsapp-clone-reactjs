@@ -6,7 +6,6 @@ const  AppModal = (props)=> {
     const [isClose, setIsClose] = useState(false)
 
     useEffect(()=>{
-        console.log("close__", close, "isClose__",isClose);
         setIsClose(close)
     },[close, isClose])
 

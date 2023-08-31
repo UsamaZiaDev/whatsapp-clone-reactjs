@@ -33,8 +33,8 @@ const ChatBody = () => {
       <div className="p-4  chat-list-wrapper">
         <div className="d-flex flex-column chat-list">
         {
-          [1,2,3,4,5].map(()=><>  
-              <div className="user-info-card d-flex align-items-start ">
+          [1,2,3,4,5].map((index)=><>  
+              <div className="user-info-card d-flex align-items-start " key={index}>
                 <div className="text-center">
                   <img src={Profile3} className="img-25 border-success border-2 border"/>
                   <p className="f-s text-dim mt-1"> 12:00</p>

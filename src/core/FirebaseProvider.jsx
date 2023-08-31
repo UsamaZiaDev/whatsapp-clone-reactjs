@@ -1,30 +1,39 @@
 import {initializeApp} from "firebase/app"
+import { getFirestore } from "firebase/firestore";
+
 import { createContext, useContext} from "react"
 
-const firebaseConfig = {
-    apiKey: "AIzaSyBgGlfIotZmqgCIPwNBMwmDumzV5373pb0",
-    authDomain: "whatsapp-clone-139ec.firebaseapp.com",
-    projectId: "whatsapp-clone-139ec",
-    storageBucket: "whatsapp-clone-139ec.appspot.com",
-    messagingSenderId: "259335070042",
-    appId: "1:259335070042:web:476536a8e4806cd3c19363"
-  };
 
-  // const firebaseApp = initializeApp(firebaseConfig)
+  const env = import.meta.env
 
-export const FirebaseContext = createContext(null)
+  const firebaseConfig = {
+    apiKey:env.VITE_FIREBASE_api_key,
+    authDomain:env.VITE_FIREBASE_auth_domain,
+    projectId:env.VITE_FIREBASE_PROJECT_ID,
+    storageBucket:env.VITE_FIREBASE_STORAGE_BUCKET,
+    messagingSenderId:env.VITE_FIREBASE_MESSAGING_SENDER_ID,
+    appId:env.VITE_FIREBASE_APP_ID,
+  }
+
+  
+  const firebaseApp = initializeApp(firebaseConfig)
+  
+  const firebaseDB = getFirestore(firebaseApp)
+
+  export const FirebaseContext = createContext(null)
 
 
 
-export const  FirebaseProvider = (props) => {
-  return (
-    <FirebaseContext.Provider 
-        value={{name:"usamazia", fatherName:"zia ullah"}}
-    >
-        {props.children}
-    </FirebaseContext.Provider>
-  )
-}
+
+  export const  FirebaseProvider = (props) => {
+    return (
+      <FirebaseContext.Provider 
+          value={{firebaseDB: firebaseDB}}
+      >
+          {props.children}
+      </FirebaseContext.Provider>
+    )
+  }
 
 
 

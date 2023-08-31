@@ -10,12 +10,14 @@ import IconField from '../common/IconField'
 import SidebarChat from "./SidebarChat"
 import AppModal from "../common/AppModal"
 
+import {FirebaseContext} from "./../../core/FirebaseProvider"
+
 const Sidebar = () => {
 
     const SidebarDummyContent =[
       {
         id:0,
-        name:"safi",
+        name:"Rana Ashfaq",
         lastsceen: "9:13 AM",
         lastmessage: "see you soon :)",
         totalmessage: "5",
@@ -23,7 +25,7 @@ const Sidebar = () => {
       },
       {
         id:1,
-        name:"zain",
+        name:"Malik Kala",
         lastsceen: "10:28 PM",
         lastmessage: "sure!",
         totalmessage: "2",
@@ -31,7 +33,7 @@ const Sidebar = () => {
       },
       {
         id:2,
-        name:"waqar",
+        name:"Rana Pervaiz",
         lastsceen: "2:53 PM",
         lastmessage: "on the way",
         totalmessage: "9+",
@@ -39,7 +41,7 @@ const Sidebar = () => {
       },
       {
         id:3,
-        name:"tkn",
+        name:"Malik Bashir",
         lastsceen: "12:44 AM",
         lastmessage: "tekken 8 combos",
         totalmessage: "6",
@@ -47,7 +49,7 @@ const Sidebar = () => {
       },
       {
         id:4,
-        name:"dummy",
+        name:"Ch Laquait",
         lastsceen: "5:14 AM",
         lastmessage: "cards designed...",
         totalmessage: "1"
@@ -57,11 +59,11 @@ const Sidebar = () => {
   return (
     <div className="bg-primary vh-100">
 
-    <AppModal
-      title="Room"
-      text="Create New Room"
-      close={true}
-    />
+      <AppModal
+        title="Room"
+        text="Create New Room"
+        close={true}
+      />
       
       <div className="bg-dark user-info-card p-3 d-flex align-items-center ">
         <img src={Profile} className="rounded-circle img-60 border-success border-3 border"/>
@@ -82,41 +84,9 @@ const Sidebar = () => {
 
       <div className=" sidebar-chat-boxs p-3 ">
         {
-          SidebarDummyContent?.map((users)=> <SidebarChat users={users} /> )
+          SidebarDummyContent?.map((users, index)=> <SidebarChat key={index} users={users} /> )
         }
       </div>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
     </div>
   )
